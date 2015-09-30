@@ -13,6 +13,7 @@
 		A13AF2E51BBB95A1003A8546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13AF2E41BBB95A1003A8546 /* Assets.xcassets */; };
 		A17C5B7C1BBBA9520083FA60 /* QBaseLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C5B7B1BBBA9520083FA60 /* QBaseLanguage.m */; };
 		A17C5B7F1BBBAE360083FA60 /* QBaseLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A17C5B811BBBAE360083FA60 /* QBaseLocalizable.strings */; };
+		A1E2D73D1BBBD4C4005919A5 /* sub_lanuage in Resources */ = {isa = PBXBuildFile; fileRef = A1E2D73C1BBBD4C4005919A5 /* sub_lanuage */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A17C5B7B1BBBA9520083FA60 /* QBaseLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBaseLanguage.m; sourceTree = "<group>"; };
 		A17C5B801BBBAE360083FA60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/QBaseLocalizable.strings; sourceTree = "<group>"; };
 		A17C5B821BBBAE5A0083FA60 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/QBaseLocalizable.strings"; sourceTree = "<group>"; };
+		A1E2D73C1BBBD4C4005919A5 /* sub_lanuage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sub_lanuage; path = ../cmd/sub_lanuage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		A13AF2CC1BBB95A1003A8546 = {
 			isa = PBXGroup;
 			children = (
+				A1E2D73C1BBBD4C4005919A5 /* sub_lanuage */,
 				A17C5B761BBB9A980083FA60 /* src */,
 				A13AF2D71BBB95A1003A8546 /* QBaseLanguageDemo */,
 				A13AF2D61BBB95A1003A8546 /* Products */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A17C5B7F1BBBAE360083FA60 /* QBaseLocalizable.strings in Resources */,
+				A1E2D73D1BBBD4C4005919A5 /* sub_lanuage in Resources */,
 				A13AF2E51BBB95A1003A8546 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,10 +1,13 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+
+/** 语种类型 可自行扩展 */
 typedef NS_ENUM(NSInteger, QBaseLanguage) {
     QBaseLanguage_en,
     QBaseLanguage_zh_Hans
 };
+
 
 /**
  *  初始化语言环境（默认获取系统语言环境）

@@ -1,0 +1,66 @@
+#/bin/bash
+
+##===============================
+
+RELATIVE_PATH="/../sub_language"
+
+GENERATE_FILE_NAME="QBaseLocalizable.strings"
+
+##===============================
+
+## 搜索目录全路径
+SEARCH_DIR=${PWD}${RELATIVE_PATH}
+
+## 进入搜索目录
+cd ${SEARCH_DIR}
+
+
+## 遍历搜索目录下的所有路径
+file_list=`ls .`
+
+for file in $file_list
+do
+		if test -f $file # 判断文件类型
+    then  
+    	continue       # 跳过文件类型
+  	else
+  		# lproj_path目录路径
+					lproj_path="${PWD}/${file}"
+
+			# 遍历 *.lproj
+  		stings_list=`ls $file` 
+  		let flag=0
+    	for strings_file in $stings_list
+			do 
+				if test -f ${strings_file}
+				then
+					continue
+				else
+					# 当前strings文件路径
+					strings_path="$lproj_path/${strings_file}"
+					# 当前strings内容
+					message=`cat ${strings_path}`
+
+					if [[ "${GENERATE_FILE_NAME}" = "${strings_file}" ]]; 
+					then
+						continue
+					fi
+
+					# 第一次遍历，重建文件、否则追加内容
+					if [[ flag -eq 0 ]]; 
+					then
+						echo "/* ${strings_file%%.*} */" > "${lproj_path}/${GENERATE_FILE_NAME}"
+						echo ${message} >>  "${lproj_path}/${GENERATE_FILE_NAME}"
+					else
+						echo "\n/* ${strings_file%%.*} */" >> "${lproj_path}/${GENERATE_FILE_NAME}"
+						echo ${message} >> "${lproj_path}/${GENERATE_FILE_NAME}"
+					fi
+
+					# 标志位++					
+					let flag=${flag}+1
+				fi
+			done
+    fi
+done
+	
+
