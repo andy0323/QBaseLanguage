@@ -1,12 +1,35 @@
-# JXLocalizable
+# QBaseLanguage
 
-控制本地化语言包切换的组件
+客户端国际化组件
 
-本文转自[http://blog.csdn.net/xwren362922604/article/details/17190061](http://blog.csdn.net/xwren362922604/article/details/17190061)
+## Usage
 
-## 语言包加载流程
+### 注册语言资源包（如果不注册、会一直加载英文版本资源文件）
 
-![语言包加载流程](res/user-lang-flow.png)
+```
+    qbase_language_setup(@"QBaseLocalizable");
+```
+
+### 获取对应的语言内容
+
+```
+    NSString *message = qbase_language_get_message(@"hello", @"你好");
+```
+
+### 修改客户端默认语言（每次启动、展现的语言）
+
+```
+qbase_language_set_language();
+```
+
+### 注册/注销监听（语言设置变化）
+```
+	// 注册监听者
+	qbase_language_add_listener(self, @selector(languageChanged:));
+
+	// 注销监听者
+    qbase_language_remove_listener(self);
+```
 
 ## Contact
 
@@ -15,4 +38,4 @@
 
 ##Licenses
 
-All source code is licensed under the [MIT License](https://github.com/andy0323/JXLocalizable/blob/master/LICENSE).
+All source code is licensed under the [MIT License](https://github.com/andy0323/QBaseLanguage/blob/master/LICENSE).
